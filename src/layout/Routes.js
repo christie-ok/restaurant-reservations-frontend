@@ -1,0 +1,68 @@
+import React from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import Dashboard from "../dashboard/Dashboard";
+import NotFound from "./NotFound";
+import NewReservation from "./NewReservation";
+import NewTable from "../tables/NewTable";
+import { today } from "../utils/date-time";
+import SeatTable from "../tables/SeatTable";
+import SearchForm from "../search/SearchForm";
+import EditReservation from "./EditReservation"
+
+
+
+
+/**
+ * Defines all the routes for the application.
+ *
+ * You will need to make changes to this file.
+ *
+ * @returns {JSX.Element}
+ */
+
+
+function Routes() {
+  
+  return (
+    <Switch>
+      
+      <Route exact={true} path="/">
+        <Redirect to={"/dashboard"} />
+      </Route>
+
+      <Route exact={true} path="/reservations">
+        <Redirect to={"/dashboard"} />
+      </Route>
+      
+      
+      <Route exact={true} path="/reservations/:reservation_id/seat">
+       <SeatTable  /> 
+      </Route>
+      
+      <Route exact={true} path="/reservations/:reservation_id/edit">
+       <EditReservation  /> 
+      </Route>
+      
+      
+      <Route path="/reservations/new">
+        <NewReservation />
+      </Route>
+      
+      <Route path="/dashboard">
+        <Dashboard date={today()}  />
+      </Route>
+
+      <Route path="/search">
+        <SearchForm  />
+      </Route>      
+
+      <Route path="/tables/new">
+        <NewTable  />
+      </Route>
+        <NotFound  />
+      
+    </Switch>
+  );
+}
+
+export default Routes;
