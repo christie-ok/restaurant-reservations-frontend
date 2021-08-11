@@ -188,11 +188,83 @@ Returns status 200 and the updated reservation.
 ### /dashboard
 The /dashboard route displays all tables and the reservations that are schedules for the current date. If a reservation has been completed or canceled, it will not be displayed.
 
-![screenshot](/images/dashboard.png)
+![screenshot dashboard](/images/dashboard.png)
 
+### /dashboard?date=YYYY-MM-DD
+Displays reservations for specified date.
+Table information does not change based on date.
 
+### /reservations/new
+Route displays form to create new reservation.
+After form submission, the app will display the dashboard screen for the date of the newly created reservation including all reservations on that date.
 
-Screenshots of your application. This makes your application description much easier to understand.
-A summary section that concisely explains what your application does. Try to frame this from the standpoint of what the user does, or how the application benefits the user.
-A section on the technology used
-Installation instructions
+![screenshot new reservation form](/images/new-reservation-form.png)
+
+### /tables/new
+This route displays a form that allows the user to create a new table.
+After submitting, the app will go to the default dashboard page and display all the tables, including the newly created table.
+
+![screenshot new table form](/images/new-table-form.png)
+
+### /reservations/:reservation_id/seat
+If a table has no reservation currently seated at it, and a reservation's status is booked, the user can seat the reservation at the table (provided the table has enough capacity).
+Once a reservation is seated at a table, the user has the ability on the dashboard to "finish" the table when the party leaves.  This clears the table's reservation and changes the reservation's status to finished.
+
+Before Seat Button is Clicked
+![screenshot before seat button is clicked](/images/dashboard.png)
+
+After Seat Button is Clicked
+![screenshot after seat button is clicked](/images/after-seat-button.png)
+
+After Finish Button is Clicked
+![screenshot after finish button is clicked](/images/after-finish-button.png)
+
+Seat Form
+![screenshot seat form](/images/seat-form.png)
+
+### /search
+The Search form will allow the user to search for reservations by customer phone number. Partial matches are acceptable, and the API will return reservations for such matches. If no results are found, the page displays "No reservations found".
+
+![screenshot search form](/images/search-form.png)
+
+No matching reservations found
+![screenshot no matches](/images/no-results.png)
+
+## Technology Used
+The PERN stack was used to build this application. The PERN stack includes, but is not limited to: PostgreSQL, Express.js, React.js, Node.js. Twitter Bootstrap 4.5.2 is also used on the frontend.
+
+ElephantSQL PostgreSQL instances are used to store the data. Node.js in conjuction with Knex.js are used to update and interface with the data instances. Express.js version 4 is being used to handle the routing between the requests and the responses.
+
+Facebook React.js is used on the frontend to create a responsive, dynamic web application for the user. I am using functional, hook-based React as opposed to its object-oriented counterpart. Throughout the frontend application, many hooks are used to simplify flow and layout of the application. There is plenty of React + ES6 + Bootstrap magic happening.
+
+## Installation
+In order to effectively install and use this application locally, you will need to either clone the repo from this GitHub or download the zip. You will then need to navigate to the top level of the project in your bash terminal and:
+
+1. run `npm i`
+2. `cd front-end && npm i`
+3. `cd ../back-end && npm i`
+
+Now that you have all of the scripts installed, you will need two different PostgreSQL database instances to either run the application locally or test it.
+
+You must make a `.env` file in both the front-end and back-end directories.
+
+Load the back-end `.env` file with two environment variables with the values of your two database URLs like so:
+
+    DATABASE_URL_DEVELOPMENT=development-data-base-url-goes-here
+    DATABASE_URL_TEST=test-data-base-url-goes-here
+
+In the front-end `.env` file, enter:
+
+    REACT_APP_API_BASE_URL=http://localhost:5000
+
+Now you will need to migrate the tables to the development database. Don't bother doing it for the test database, though. The tests are carrying that out for you each time. From the back-end folder:
+
+1. npx knex migrate:latest
+2. npx knex seed:run
+
+Now you are ready to run the server locally. From the top level of the project, run `npm run start:dev` if you would like to run the server and application.
+
+If you would like to test the application, you can view the package.json files and use the testing scripts provided there. Unfortunately, some of the provided testing scripts do not function. However, the ones that certainly do are:
+
+1. all of those that are structured like `test:5:backend` or `test:3:frontend`
+2. `test:frontend` and `test:backend`
