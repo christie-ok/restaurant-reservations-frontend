@@ -188,7 +188,7 @@ Returns status 200 and the updated reservation.
 ### /dashboard
 The /dashboard route displays all tables and the reservations that are schedules for the current date. If a reservation has been completed or canceled, it will not be displayed.
 
-![dashboard screenshot] (images/Screen Shot 2021-08-11 at 11.29.54 AM.png)
+![screenshot](/images/Screen Shot 2021-08-11 at 11.29.54 AM.png "dashboard screenshot")
 
 
 
