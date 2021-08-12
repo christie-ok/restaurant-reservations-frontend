@@ -40,7 +40,7 @@ function ReservationList({reservations, handleCancel}) {
                   </tr>
                   </tbody>
                 </table>
-                <div className="reservations-item-group">
+                <div id={reservation_id} className="reservations-item-group">
                 <SeatButton reservation_id={reservation_id} status={status}  />
                 <a href={`/reservations/${reservation_id}/edit`}><button className="btn" type="button">Edit</button></a>
                 <button className="btn" data-reservation-id-cancel={reservation.reservation_id} onClick={handleCancel} type="button">Cancel</button>
