@@ -84,6 +84,7 @@ function SeatTable() {
         <div>
              
              <table className="reservations-item-group">
+               <tbody>
                   <tr>
                     <th>Name:</th>
                     <td>{`${reservation.first_name} ${reservation.last_name}`}</td>
@@ -100,6 +101,7 @@ function SeatTable() {
                     <th>Status:</th>
                     <td data-reservation-id-status={reservation.reservation_id}>{reservation.status}</td>
                   </tr>
+                  </tbody>
                 </table>
         <form onSubmit={seatSubmitHandler}>
         <div className="form-group row">
