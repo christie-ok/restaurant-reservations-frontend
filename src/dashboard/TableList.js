@@ -6,12 +6,12 @@ function TableList({date, finishClickHandler, tables}) {
     return  (
         <div id="table-div">
             <h5>Tables</h5>
-        <ul class="tables-group" >
+        <ul className="tables-group" >
             {
                 tables.map((table) => {
                     const {table_name, table_id, reservation_id, capacity} = table;
                     return (
-                        <li key={table_id} id={table_id} class="tables-item">
+                        <li key={table_id} id={table_id} className="tables-item">
                             <table>
                                 <tr>
                                     <th>Table:</th>
@@ -26,7 +26,7 @@ function TableList({date, finishClickHandler, tables}) {
                                     <td id={`status-${table_id}`} data-table-id-status={table.table_id}>{reservation_id ? "occupied" : "free"}</td>
                                 </tr>
                                 </table>
-                            <button hidden={!reservation_id} onClick={finishClickHandler} data-table-id-finish={table.table_id} class="btn btn-outline-dark btn-lg tables-item-sub">Finish</button>  
+                            <button hidden={!reservation_id} onClick={finishClickHandler} data-table-id-finish={table.table_id} className="btn btn-outline-dark btn-lg tables-item-sub">Finish</button>  
                         </li>
                     )
                 })

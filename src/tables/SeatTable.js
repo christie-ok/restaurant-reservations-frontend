@@ -83,7 +83,7 @@ function SeatTable() {
     return ( 
         <div>
              
-             <table class="reservations-item-group">
+             <table className="reservations-item-group">
                   <tr>
                     <th>Name:</th>
                     <td>{`${reservation.first_name} ${reservation.last_name}`}</td>
@@ -102,10 +102,10 @@ function SeatTable() {
                   </tr>
                 </table>
         <form onSubmit={seatSubmitHandler}>
-        <div class="form-group row">
-            <label class="font-weight-bold col-sm-2 col-form-label">Table Number:</label>
-            <div class="col-sm-10">
-        <select class="form-control" name="table_id" required="required" onChange={seatTableChangeHandler}> 
+        <div className="form-group row">
+            <label className="font-weight-bold col-sm-2 col-form-label">Table Number:</label>
+            <div className="col-sm-10">
+        <select className="form-control" name="table_id" required="required" onChange={seatTableChangeHandler}> 
         <option key="0" value="0">Choose Table - Capacity</option>
             {
                 tables.map((table) => {

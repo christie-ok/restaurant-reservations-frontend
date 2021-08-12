@@ -116,24 +116,24 @@ function ReservationForm({reservation_id}) {
 
     return (
         <div>
-        <form class="form-group" onSubmit={submitHandler}>
+        <form className="form-group" onSubmit={submitHandler}>
                 <label>First Name: </label>
-                    <input class="form-control" type="text" name="first_name" required="required" value={reservation.first_name} onChange={changeHandler} />
+                    <input className="form-control" type="text" name="first_name" required="required" value={reservation.first_name} onChange={changeHandler} />
                 
                 <label>Last Name:</label>
-                    <input class="form-control" type="text" name="last_name" required="required" value={reservation.last_name} onChange={changeHandler} />
+                    <input className="form-control" type="text" name="last_name" required="required" value={reservation.last_name} onChange={changeHandler} />
                 
                 <label>Mobile Number:</label>
-                    <input class="form-control" type="tel" name="mobile_number" required="required" value={reservation.mobile_number} onChange={changeHandler} />
+                    <input className="form-control" type="tel" name="mobile_number" required="required" value={reservation.mobile_number} onChange={changeHandler} />
                 
                 <label>Date of Reservation:</label>
-                 <input class="form-control" type="date" name="reservation_date"  required="required" value={reservation.reservation_date} onChange={changeHandler} />
+                 <input className="form-control" type="date" name="reservation_date"  required="required" value={reservation.reservation_date} onChange={changeHandler} />
                 
                 <label>Time of Reservations:</label>
-                 <input class="form-control" type="time" name="reservation_time" required="required" value={reservation.reservation_time} onChange={changeHandler} />
+                 <input className="form-control" type="time" name="reservation_time" required="required" value={reservation.reservation_time} onChange={changeHandler} />
                 
                 <label>Number of People:</label>
-                 <input class="form-control" type="number" min="1" name="people" required="required" value={reservation.people} onChange={changeHandler} />
+                 <input className="form-control" type="number" min="1" name="people" required="required" value={reservation.people} onChange={changeHandler} />
                 
                 <button type="submit">Submit</button>
                 <button onClick={handleCancel}>Cancel</button>

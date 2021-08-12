@@ -30,14 +30,14 @@ function SearchForm() {
       }
 
     return (
-        <div class="search-form">
-    <form class="search-form-item">
+        <div className="search-form">
+    <form className="search-form-item">
         <label>
             Mobile Number: <input type="tel" id="mobile_number" name="mobile_number" placeholder="Enter a customer's phone number" onChange={changeHandler} value={mobile} />
         </label>
-        <button class="search-form-item btn btn-outline-primary" onClick={searchHandler} type="submit">Find</button>
+        <button className="search-form-item btn btn-outline-primary" onClick={searchHandler} type="submit">Find</button>
     </form>
-        <div class="search-form-item" id="placeholder"></div>
+        <div className="search-form-item" id="placeholder"></div>
     <ReservationList reservations={matches} handleCancel={handleCancel} />
     </div>
     )

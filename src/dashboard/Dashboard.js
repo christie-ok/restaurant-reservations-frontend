@@ -76,9 +76,9 @@ async function handleCancel({target}) {
         <h5 className="mb-0">Reservations for {date}</h5>
       </div>
       <div>
-      <Link to={`/dashboard?date=${previous(date)}`}><button class="btn">Previous</button></Link>
-      <Link to="/dashboard"><button class="btn">Today</button></Link>
-      <Link to={`/dashboard?date=${next(date)}`}><button class="btn">Next</button></Link>
+      <Link to={`/dashboard?date=${previous(date)}`}><button className="btn">Previous</button></Link>
+      <Link to="/dashboard"><button className="btn">Today</button></Link>
+      <Link to={`/dashboard?date=${next(date)}`}><button className="btn">Next</button></Link>
       </div>
       <ErrorAlert error={reservationsError} />
       <ErrorAlert error={tablesError} />

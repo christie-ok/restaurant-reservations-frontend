@@ -6,7 +6,7 @@ import redX from "./redX.png";
 function ReservationList({reservations, handleCancel}) {
 //IF NO EXISTING RESERVATIONS, RETURN "NO RESERVATIONS FOUND"
   if (reservations.length === 0) return (
-    <div class="d-flex justify-content-center">
+    <div className="d-flex justify-content-center">
       <img src={redX} alt="redX" width="20" height="20" />
   <p>No reservations found</p>
   <img src={redX} alt="redX" width="20" height="20" />
@@ -14,13 +14,13 @@ function ReservationList({reservations, handleCancel}) {
   )
 //IF RESERVATIONS EXIST, LIST THEM WITH ALL DATA POINTS
     return ( reservations.length > 0 && (
-<ul class="reservations-group">
+<ul className="reservations-group">
         {
           reservations.map((reservation) => {
             const {reservation_id, first_name, last_name, people, reservation_date, reservation_time, status} = reservation;
             return (
-              <li key={reservation_id} id={reservation_id} class="reservations-item">
-                <table class="reservations-item-group">
+              <li key={reservation_id} id={reservation_id} className="reservations-item">
+                <table className="reservations-item-group">
                   <tr>
                     <th>Name:</th>
                     <td>{`${first_name} ${last_name}`}</td>
@@ -38,10 +38,10 @@ function ReservationList({reservations, handleCancel}) {
                     <td data-reservation-id-status={reservation.reservation_id}>{status}</td>
                   </tr>
                 </table>
-                <div class="reservations-item-group">
+                <div className="reservations-item-group">
                 <SeatButton reservation_id={reservation_id} status={status}  />
-                <a href={`/reservations/${reservation_id}/edit`}><button class="btn" type="button">Edit</button></a>
-                <button class="btn" data-reservation-id-cancel={reservation.reservation_id} onClick={handleCancel} type="button">Cancel</button>
+                <a href={`/reservations/${reservation_id}/edit`}><button className="btn" type="button">Edit</button></a>
+                <button className="btn" data-reservation-id-cancel={reservation.reservation_id} onClick={handleCancel} type="button">Cancel</button>
                 </div>
               </li>
               )
