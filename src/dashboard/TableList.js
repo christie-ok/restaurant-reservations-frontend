@@ -12,6 +12,7 @@ function TableList({date, finishClickHandler, tables}) {
                     return (
                         <li key={table_id} id={table_id} className="tables-item">
                             <table>
+                                <tbody>
                                 <tr>
                                     <th>Table:</th>
                                     <td>{table_name}</td>
@@ -24,6 +25,7 @@ function TableList({date, finishClickHandler, tables}) {
                                     <th>Status:</th>
                                     <td id={`status-${table_id}`} data-table-id-status={table.table_id}>{reservation_id ? "occupied" : "free"}</td>
                                 </tr>
+                                </tbody>
                                 </table>
                             <button hidden={!reservation_id} onClick={finishClickHandler} data-table-id-finish={table.table_id} className="btn btn-outline-dark btn-lg tables-item-sub">Finish</button>  
                         </li>

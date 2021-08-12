@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {Link, useLocation} from "react-router-dom";
-import { cancelReservation, listReservations, listTables, freeUpTable, readTable } from "../utils/api";
+import { cancelReservation, listReservations, listTables, freeUpTable } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 import { today, previous, next } from "../utils/date-time";
 import TableList from "./TableList";
