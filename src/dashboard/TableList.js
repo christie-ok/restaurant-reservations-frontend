@@ -1,5 +1,4 @@
 import React from "react";
-import { today } from "../utils/date-time";
 
 function TableList({date, finishClickHandler, tables}) {
 //LISTS ALL TABLES

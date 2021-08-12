@@ -21,6 +21,7 @@ function ReservationList({reservations, handleCancel}) {
             return (
               <li key={reservation_id} id={reservation_id} className="reservations-item">
                 <table className="reservations-item-group">
+                  <tbody>
                   <tr>
                     <th>Name:</th>
                     <td>{`${first_name} ${last_name}`}</td>
@@ -37,6 +38,7 @@ function ReservationList({reservations, handleCancel}) {
                     <th>Status:</th>
                     <td data-reservation-id-status={reservation.reservation_id}>{status}</td>
                   </tr>
+                  </tbody>
                 </table>
                 <div className="reservations-item-group">
                 <SeatButton reservation_id={reservation_id} status={status}  />

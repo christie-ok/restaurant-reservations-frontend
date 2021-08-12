@@ -45,7 +45,6 @@ function Dashboard({ date }) {
     const result = window.confirm("Is this table ready to seat new guests? This cannot be undone.");
     if (result) {
         const table_id = target.parentNode.id;
-        const table = await readTable(table_id);
 
 //REMOVES RESERVATION ID FROM TABLE
         await freeUpTable(table_id)
