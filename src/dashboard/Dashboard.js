@@ -61,6 +61,7 @@ async function handleCancel({target}) {
   const result = window.confirm("Do you want to cancel this reservation? This cannot be undone.");
   if (result) {
     const reservation_id = target.parentNode.id;
+    console.log("Cancel", reservation_id)
     //CANCELS RESERVATION AND RELISTS ALL RESERVATIONS WITHOUT THE CANCELLED ONE.
     await cancelReservation(reservation_id);
     await listReservations({date})
